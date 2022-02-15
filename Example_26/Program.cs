@@ -1,12 +1,16 @@
 ﻿// Задача 26: Возведите число А в натуральную степень В используя цикл
-Console.WriteLine("Введите число: ");
-int A = int.Parse(Console.ReadLine());
-int B = A * A * A * A * A ;
-int result = A*B;
-for ( A = 1; B >=0; B++)
+Console.Clear();
+Console.WriteLine();
+int a = new Random().Next(1,10);
+int b = new Random().Next(1,10);
+double exp(int basis, int extent)
 {
-    Console.WriteLine(result);
-    break;
-
+    if (extent == 0)
+    {
+       return 1;
+    }
+    else return basis*exp(basis, extent-1);
 }
+Console.Write($"Введено значение А = {a}  и B = {b}");
+Console.WriteLine($"  {a} возведенное в степень {b} равно {exp(a,b)}");
 
